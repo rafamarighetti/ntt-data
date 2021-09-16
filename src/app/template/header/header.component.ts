@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  term!: string;
+  @Output() term = new EventEmitter<any>();
 
   constructor(private route: Router) { }
 
   ngOnInit() {
   }
 
-  searchMovie(){
+  searchHeader(term: string): any {
+    this.term.emit(term);
     this.route.navigateByUrl('/movies');
   }
+
 }

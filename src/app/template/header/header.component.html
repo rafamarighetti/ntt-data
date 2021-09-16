@@ -2,9 +2,8 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/movies">NTT Movies</a>
     <div id="navbarSupportedContent">
-      <form class="form-inline my-2 my-lg-0" (submit)="searchMovie()">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Filme" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      <form class="form-inline my-2 my-lg-0">
+        <app-search (term)="searchHeader($event)"></app-search>
       </form>
     </div>
   </div>
