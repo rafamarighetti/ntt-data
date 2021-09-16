@@ -1,0 +1,17 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <h1>{{ movie.Title }}</h1>
+      <p>{{ movie.Plot }}</p>
+      <h6><strong>Actor: </strong> {{ movie.Writer }}</h6>
+      <h6><strong>Rating: </strong><app-rating></app-rating>
+      </h6>
+      <button (click)="changeFavorite()" type="button" class="btn btn-labeled mt-2" [ngClass]="favoriteButton">
+        Favorite<span class="btn-label px-2"><i class="bi" [ngClass]="favoriteIcon"></i></span>
+      </button>
+    </div>
+    <div class="col-4">
+      <img [src]="movie.Poster" [alt]="movie.Title" [title]="movie.Title">
+    </div>
+  </div>
+</div>
